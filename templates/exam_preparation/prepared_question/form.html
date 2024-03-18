@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>without bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+  </head>
+  <body>
+    ИИ қолдану <br>
+<input type="text"> <button>></button>
+<br><br>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        Название <br>
+        {{ form.title }}<br>
+        Content <br>
+        <textarea id="summernote" name="content">{{ form.content.value|default_if_none:"" }}</textarea><br>
+        <input type="submit">
+    </form>
+    <script>
+      $('#summernote').summernote({
+        toolbar: [
+          ['font', ['bold', 'underline', 'fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['picture']],
+        ]
+      });
+
+      var markupStr = $('#summernote').summernote('code');
+    </script>
+  </body>
+</html>

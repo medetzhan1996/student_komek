@@ -1,0 +1,14 @@
+<a href="{% url 'exam_preparation:prepared-question-create' %}">+ добавить</a>
+<br><br>
+
+{% for prepared_question in prepared_questions %}
+    <a href="{% url 'exam_preparation:prepared-question-detail' pk=prepared_question.id %}">
+        {{ prepared_question.title }}
+    </a>
+    <a href="{% url 'exam_preparation:prepared-question-edit' pk=prepared_question.id %}">
+        edit
+    </a> &nbsp&nbsp
+    <a href="{% url 'exam_preparation:prepared-question-delete' pk=prepared_question.id %}">
+        remove
+    </a> <br>
+{% endfor %}
