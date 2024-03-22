@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+<div id="wrapper" class="" style="padding-top: 82px;">
+    <header id="header-container" class="fullwidth dashboard-header sticky" style="position: fixed;">
+
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+                <!-- Left Side Content -->
+                <div class="left-side">
+                    <!-- Logo -->
+                    <div id="logo">
+                        <a href="https://gpttextart.ru/">
+                            Student_Komek
+                        </a>
+                    </div>
+                </div>
+                <!-- Left Side Content / End -->
+
+                <!-- Right Side Content / End -->
+                <div class="right-side">
+
+                    <!-- User Menu -->
+                    <div class="header-widget">
+
+                        <!-- Messages -->
+                        <div class="header-notifications user-menu">
+                            <div class="header-notifications-trigger" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="#" title="Еко">
+                                    <div class="user-avatar status-online"><img src="https://gpttextart.ru/storage/profile/103762463377301117676.jpg" alt="Еко"></div>
+                                </a>
+                            </div>
+                            <!-- Dropdown -->
+                            
+                            <div class="dropdown-menu header-notifications-dropdown"  aria-labelledby="dropdownMenuButton1">
+                                <ul class="user-menu-small-nav">
+                                    <li>
+                                        <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+                                              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+                                            </svg> Личный кабинет
+                                        </a>
+                                    </li>
+                                    <li><a href="https://gpttextart.ru/ai-templates"><i class="icon-feather-layers"></i> Шаблоны                                                    </a>
+                                    </li>
+                                    <li><a href="https://gpttextart.ru/ai-images"><i class="icon-feather-image"></i> Midjourney                                                        </a>
+                                    </li>
+                                    <li><a href="https://gpttextart.ru/ai-chat-bots"><i class="icon-feather-message-circle"></i> ChatGPT                                                        </a></li>
+                                    <li><a href="https://gpttextart.ru/ai-code"><i class="icon-feather-code"></i> Код ChatGPT                                                        </a>
+                                    </li>
+                                    <li><a href="https://gpttextart.ru/all-documents"><i class="icon-feather-file-text"></i> Все документы                                                </a></li>
+                                    <li><a href="https://gpttextart.ru/membership"><i class="icon-feather-gift"></i> Тарифный план</a>
+                                    </li>
+                                    <li><a href="https://gpttextart.ru/account-setting"><i class="icon-feather-settings"></i> Настройки аккаунта                                                </a></li>
+                                    <li>
+                                    <a href="https://gpttextart.ru/page/membershipchangeplan"><i class="icon-feather-file-text"></i> Тарифные планы                                                    </a></li>
+                                    <li><a href="https://gpttextart.ru/logout"><i class="icon-feather-log-out"></i> Выйти</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- User Menu / End -->
+
+
+                </div>
+            </div>
+            <!-- Header / End -->
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <div class="dashboard-container">
+        <div class="dashboard-sidebar" style="width: auto;">
+            <div class="dashboard-sidebar-inner" data-simplebar="init">
+                <div class="simplebar-track vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar" style="visibility: visible; top: 115px; height: 72px;">
+                        
+                    </div>
+                </div>
+                <div class="simplebar-track horizontal" style="visibility: visible;">
+                    <div class="simplebar-scrollbar" style="visibility: visible; left: 0px; width: 25px;">
+                        
+                    </div>
+                </div>
+                <div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;">
+                    <div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
+                        <div class="dashboard-nav-container">
+
+                            <!-- Responsive Navigation Trigger -->
+                            <a href="#" class="dashboard-responsive-nav-trigger">
+                                    <span class="hamburger hamburger--collapse">
+                                        <span class="hamburger-box">
+                                            <span class="hamburger-inner"></span>
+                                        </span>
+                                    </span>
+                                <span class="trigger-title">Навигация по личному кабинету</span>
+                            </a>
+                            <!-- Navigation -->
+                            <div class="dashboard-nav">
+                                <div class="dashboard-nav-inner">
+                                    <ul data-submenu-title="Кабинет">
+                                        <li class="">
+                                            <a href="https://gpttextart.ru/dashboard">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+                                                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+                                                </svg> Жеке бөлме
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <ul data-submenu-title="Басқару панелі">
+                                        <li class="active">
+                                            <a href="{% url 'exam_preparation:prepared-question-list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+                                                  <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0zM8 9.433 1.562 6 8 2.567 14.438 6z"/>
+                                                </svg> Үлгілер
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left" viewBox="0 0 16 16">
+                                                  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                </svg> ChatGPT 
+                                            </a>
+                                        </li>                                   
+                                    </ul>
+
+                                    <ul data-submenu-title="Аккаунт">
+                                        <li class="">
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16">
+                                                  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zM1 4v2h6V4zm8 0v2h6V4zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5z"/>
+                                                </svg> Тарифтік жоспар
+                                            </a>
+                                        </li>
+                                        
+                                        <li class="">
+                                            <a href="">
+                                                <i class="icon-feather-log-out"></i> Есеп жазбасын түзету
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                                </svg> Шығу
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                    <!-- Navigation / End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-content-container" data-simplebar="init" >
+            <div class="simplebar-track vertical" style="visibility: visible;">
+                <div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 89px;"></div>
+            </div>
+            <div class="simplebar-track horizontal" style="visibility: visible;">
+                <div class="simplebar-scrollbar" style="visibility: visible; left: 0px; width: 25px;"></div>
+            </div>
+            <div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;">
+                <div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
+                    <div class="dashboard-content-inner" style="min-height: 196px;">
+                        {% block content %}
+
+    					{% endblock %}  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div id="footer">
+        <div class="footer-middle-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="footer-logo">
+                            Student_Komek
+                        </div>
+                        <p>Student_Komek - онлайн сервис, предоставляющий доступ к Chat GPT на Русском. С помощью нашего сервиса вы можете: получить ответ на любой вопрос; писать рекламные и художественные статьи; искать рекомендации и общаться на различные темы; а так же генерировать изображения в высоком качестве. gpt бесплатно.</p>
+                        <div class="margin-top-10">
+                            <div class="d-flex gap-2">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

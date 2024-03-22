@@ -1,14 +1,52 @@
-<a href="{% url 'exam_preparation:prepared-question-create' %}">+ добавить</a>
-<br><br>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Dashboard Headline -->
+<div class="dashboard-headline">
+    <h3 class="d-flex align-items-center">
+        Үлгілер   
+    </h3>
+    <!-- Breadcrumbs -->
+    <nav id="breadcrumbs" class="dark">
+        <ul>
+            <li><a href="{% url 'exam_preparation:prepared-question-create' %}">Үлгілер қосу</a></li>
+        </ul>
+    </nav>
+</div>
+<div>
+    <input id="template-search" placeholder="Іздеу..." type="text" class="with-border border-pilled">
+</div>
+<div>
+    <div class="row ai-template-blocks">
+        {% for prepared_question in prepared_questions %}
+        <div class="col-md-4 col-sm-6 category-1">
+            <a href="{% url 'exam_preparation:prepared-question-detail' pk=prepared_question.id %}">
+                <div class="dashboard-box ai-templates ">
+                    <div class="content">
+                        <div style="display: flex;align-items: center; margin-bottom: 15px;">
+                            <div><h4> {{ prepared_question.title }}</h4></div>
+                            <div>
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                    </svg>
+                                  </a>
+                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'exam_preparation:prepared-question-edit' pk=prepared_question.id %}">Өзгерту</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'exam_preparation:prepared-question-delete' pk=prepared_question.id %}">Жою </a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="margin-bottom-0">
+                            Идеи для статей / блогов, которые вы можете использовать для привлечения большего трафика, потенциальных клиентов и продаж для вашего бизнеса.
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div> 
+        {% endfor %}             
+    </div>
+</div>
 
-{% for prepared_question in prepared_questions %}
-    <a href="{% url 'exam_preparation:prepared-question-detail' pk=prepared_question.id %}">
-        {{ prepared_question.title }}
-    </a>
-    <a href="{% url 'exam_preparation:prepared-question-edit' pk=prepared_question.id %}">
-        edit
-    </a> &nbsp&nbsp
-    <a href="{% url 'exam_preparation:prepared-question-delete' pk=prepared_question.id %}">
-        remove
-    </a> <br>
-{% endfor %}
+{% endblock %}

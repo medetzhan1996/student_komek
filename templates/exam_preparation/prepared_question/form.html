@@ -1,13 +1,48 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>without bootstrap</title>
+{% extends 'base.html' %}
+{% load static %}{% load widget_tweaks %}
+{% block content %}
+<div class="dashboard-headline">
+    <h3 class="d-flex align-items-center">
+        Үлгілер қосу  
+    </h3>
+</div>
+<div class="notification notice">
+ Мұнда сіз өз сұрағыңызды қоя аласыз немесе жасанды интеллектпен сөйлесе аласыз.                    
+</div>
+<div class="dashboard-box margin-top-0 margin-bottom-30">
+  <div class="content with-padding">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="submit-field margin-bottom-20">
+          <h6>ИИ қолдану</h6>
+          <div class="d-flex margin-bottom-10">
+            <input name="title" type="text" class="with-border small-input" required="">
+            <button class="button btn-sm margin-left-5 ripple-effect" name="submit" type="submit" title="Сохранить документ" data-tippy-placement="top">></button>
+          </div>
+        </div>
+        <div class="submit-field margin-bottom-20">
+          <h6>Название</h6>
+          {{ form.title|add_class:"with-border small-input"  }}
+        </div>
+        <div class="submit-field margin-bottom-20">
+          <h6>Content</h6>
+          <textarea id="summernote" name="content">{{ form.content.value|default_if_none:"" }}</textarea>
+        </div>
+        <div>
+          <small class="form-error"></small>
+          <button type="submit" name="submit" class="button ripple-effect full-width">
+            Создать 
+            <i class="icon-feather-arrow-right"></i>
+          </button>
+        </div>
+    </form>
+  </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-  </head>
-  <body>
-    ИИ қолдану <br>
+
+  <!--   ИИ қолдану <br>
 <input type="text"> <button>></button>
 <br><br>
 
@@ -18,8 +53,9 @@
         Content <br>
         <textarea id="summernote" name="content">{{ form.content.value|default_if_none:"" }}</textarea><br>
         <input type="submit">
-    </form>
-    <script>
+    </form> -->
+    
+<script>
       $('#summernote').summernote({
         toolbar: [
           ['font', ['bold', 'underline', 'fontsize']],
@@ -32,5 +68,4 @@
 
       var markupStr = $('#summernote').summernote('code');
     </script>
-  </body>
-</html>
+{% endblock %}
