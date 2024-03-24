@@ -4,12 +4,12 @@
 <!-- Dashboard Headline -->
 <div class="dashboard-headline">
     <h3 class="d-flex align-items-center">
-        Үлгілер   
+        Сұрақтар тізімі
     </h3>
     <!-- Breadcrumbs -->
     <nav id="breadcrumbs" class="dark">
         <ul>
-            <li><a href="{% url 'exam_preparation:prepared-question-create' %}">Үлгілер қосу</a></li>
+            <li><a href="{% url 'exam_preparation:prepared-question-create' %}">+ Сұрақ қосу</a></li>
         </ul>
     </nav>
 </div>
@@ -37,10 +37,6 @@
                                   </ul>
                             </div>
                         </div>
-                        
-                        <p class="margin-bottom-0">
-                            Идеи для статей / блогов, которые вы можете использовать для привлечения большего трафика, потенциальных клиентов и продаж для вашего бизнеса.
-                        </p>
                     </div>
                 </div>
             </a>
@@ -48,5 +44,4 @@
         {% endfor %}             
     </div>
 </div>
-
 {% endblock %}
