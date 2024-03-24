@@ -5,3 +5,5 @@ from .prepared_question import (
     PreparedQuestionDetailView,
     PreparedQuestionDeleteView,
 )
+
+from .ai_question_generate import GetAiQuestion

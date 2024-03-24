@@ -1,3 +1,9 @@
-{{ object.title }} <br>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-{{ object.content|safe }}
+    <h4>{{ object.title }}</h4><br>
+
+    {{ object.content|safe }}
+
+{% endblock %}

@@ -5,6 +5,7 @@ from .views import (
     PreparedQuestionDeleteView,
     PreparedQuestionUpdateView,
     PreparedQuestionDetailView,
+    GetAiQuestion,
 )
 
 app_name = 'exam_preparation'
@@ -16,4 +17,5 @@ urlpatterns = [
     path('<int:pk>/edit/', PreparedQuestionUpdateView.as_view(), name='prepared-question-edit'),
     path('<int:pk>/detail/', PreparedQuestionDetailView.as_view(), name='prepared-question-detail'),
 
+    path('get-ai-question/', GetAiQuestion.as_view(), name='get-ai-question'),
 ]
