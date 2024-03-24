@@ -16,6 +16,7 @@ class ConfirmUserMiddleware:
         ):
             return redirect('exam_preparation:prepared-question-list')
         if (
+                request.path == reverse('logout') or
                 request.path == reverse('authentication:login') or
                 request.path == reverse('authentication:confirmation_page') or
                 request.path == reverse('index')

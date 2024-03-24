@@ -1,5 +1,9 @@
 from django.urls import path
-from .views import UserRegistrationView, UserLoginView, ConfirmationPageView
+from .views import (
+    UserRegistrationView,
+    UserLoginView,
+    ConfirmationPageView,
+)
 
 app_name = 'authentication'
 
