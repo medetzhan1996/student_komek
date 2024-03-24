@@ -1,2 +1,2 @@
 from .prepared_question import PreparedQuestion
-from .ai_chat import AIChat
+from .ai_generated import AIGenerated

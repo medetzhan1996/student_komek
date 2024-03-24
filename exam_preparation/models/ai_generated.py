@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.db.models.query import QuerySet
 
 from exam_preparation.abstract.models.base import BaseModel
+from ..constant import KIND_CHOICES, CHAT
 
 User = get_user_model()
 
@@ -13,16 +14,23 @@ class AIChatQueryset(QuerySet):
         return self.filter(user_id=user_id)
 
 
-class AIChat(BaseModel):
+class AIGenerated(BaseModel):
     """
     Запрос к ИИ
     """
+
     request = models.TextField()
     response = models.TextField()
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE,
+        User,
+        on_delete=models.CASCADE,
         related_name='ai_requests',
         verbose_name="Автор"
+    )
+    kind = models.CharField(
+        choices=KIND_CHOICES,
+        max_length=320,
+        default=CHAT
     )
     objects = AIChatQueryset.as_manager()
 

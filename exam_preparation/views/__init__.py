@@ -7,3 +7,4 @@ from .prepared_question import (
 )
 
 from .ai_question_generate import GetAiQuestion
+from .ai_chat import AIChatListView, AIChatCreateView

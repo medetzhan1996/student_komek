@@ -2,8 +2,9 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 
-from ..forms.ai_question_generate import AIQuestionQenerateForm
+from ..forms import AIQuestionQenerateForm
 from ..service import generate_ai_question
+
 
 class GetAiQuestion(LoginRequiredMixin, View):
 

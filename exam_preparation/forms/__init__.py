@@ -1,1 +1,3 @@
 from .prepared_question import PreparedQuestionForm
+from .ai_chat import AIChatForm
+from .ai_question_generate import AIQuestionQenerateForm

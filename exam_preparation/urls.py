@@ -6,6 +6,8 @@ from .views import (
     PreparedQuestionUpdateView,
     PreparedQuestionDetailView,
     GetAiQuestion,
+    AIChatListView,
+    AIChatCreateView,
 )
 
 app_name = 'exam_preparation'
@@ -18,4 +20,7 @@ urlpatterns = [
     path('<int:pk>/detail/', PreparedQuestionDetailView.as_view(), name='prepared-question-detail'),
 
     path('get-ai-question/', GetAiQuestion.as_view(), name='get-ai-question'),
+    path('ai-chat/', AIChatListView.as_view(), name='ai-chat'),
+    path('ai-chat-create/', AIChatCreateView.as_view(), name='ai-chat-create'),
+
 ]

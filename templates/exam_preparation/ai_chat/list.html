@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div id="chat-content">
+        {% for ai_chat in ai_chats %}
+            <b>{{ ai_chat.request }}</b>
+            --
+            <p>{{ ai_chat.response }}</p>
+        {% endfor %}
+    </div>
+
+
+    <form id="id-ai-chat-form" action="" method="post">
+        {% csrf_token %}
+        <input type="text" id="id-ai-chat-text" required> <br>
+        <button id="id-ai-chat-create" type="submit">Жіберу</button>
+    </form>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).on("submit","#id-ai-chat-form",function(e) {
+            e.preventDefault()
+            alert('test...')
+            var text = $('#id-ai-chat-text').val()
+            var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+            if(text){
+                var load = `<div class="spinner-border text-danger" role="status">
+                      <span class="visually-hidden">Загрузка...</span>
+                    </div>`
+                $('#id-ai-chat-create').html(load)
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'exam_preparation:ai-chat-create' %}",
+                data: {
+                    text: text,
+                    csrfmiddlewaretoken: csrftoken
+                },
+                success: function(response) {
+                    var result = response.response
+                    $('#id-ai-chat-create').html('>')
+                    $('#chat-content').append(result)
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    </script>
+
+{% endblock %}
