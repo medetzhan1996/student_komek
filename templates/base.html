@@ -39,9 +39,35 @@
                             <!-- Messages -->
                             <div class="header-notifications user-menu">
                                 <div class="header-notifications-trigger" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <a href="#" title="Еко">
-                                        <div class="user-avatar status-online"><img src="https://gpttextart.ru/storage/profile/103762463377301117676.jpg" alt="Еко"></div>
+                                    <a href="#" title="Еко" role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="user-avatar status-online"><img src="https://gpttextart.ru/storage/profile/103762463377301117676.jpg" alt="Еко"></div>
                                     </a>
+                                    <ul class="dropdown-menu">
+                                        <li><h6 class="dropdown-header">Басқару панелі</h6></li>
+                                        <li class="">
+                                            <a class="dropdown-item" href="{% url 'exam_preparation:prepared-question-list' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+                                                  <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0zM8 9.433 1.562 6 8 2.567 14.438 6z"/>
+                                                </svg> Сұрақтар тізімі
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="dropdown-item" href="{% url 'exam_preparation:ai-chat' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left" viewBox="0 0 16 16">
+                                                  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                </svg> ИИ көмекші
+                                            </a>
+                                        </li>
+                                        <li><h6 class="dropdown-header">Аккаунт</h6></li>
+                                        <li>
+                                            <a class="dropdown-item" href="{% url 'logout' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                                </svg> Шығу
+                                            </a>
+                                        </li>
+                                      </ul>
                                 </div>
                                 <!-- Dropdown -->
 
@@ -107,13 +133,13 @@
                                                 <span class="hamburger-inner"></span>
                                             </span>
                                         </span>
-                                    <span class="trigger-title">Навигация по личному кабинету</span>
+                                    <span class="trigger-title">Жеке кабинет арқылы шарлау</span>
                                 </a>
                                 <!-- Navigation -->
                                 <div class="dashboard-nav">
                                     <div class="dashboard-nav-inner">
                                         <ul data-submenu-title="Басқару панелі">
-                                            <li class="active">
+                                            <li class="">
                                                 <a href="{% url 'exam_preparation:prepared-question-list' %}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
                                                       <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0zM8 9.433 1.562 6 8 2.567 14.438 6z"/>
@@ -170,6 +196,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var trigger = document.querySelector('.dashboard-responsive-nav-trigger');
+          var dashboard_nav = document.querySelector('.dashboard-nav');
+          trigger.addEventListener('click', function () {
+            dashboard_nav.classList.toggle('active');
+          });
+        });
 
+
+    </script>
 </body>
 </html>

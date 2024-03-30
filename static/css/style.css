@@ -729,8 +729,8 @@ p {
 
 @media (max-width: 767px) {
     .ud-section-title p {
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 
@@ -2992,4 +2992,19 @@ p {
 .card:hover .btn-outline-primary{
   color:white;
   background:#007bff;
+}
+
+@media(max-width: 767px) {
+    .ud-hero-buttons{
+        flex-direction: column;
+    }
+    .ud-main-btn{
+        padding: 15px 20px !important;
+        font-size: 14px !important;
+        font-weight: 600;
+    }
+    .ud-section-title h2{
+        font-size: 26px;
+        line-height: 33px;
+    }
 }

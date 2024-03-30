@@ -159,7 +159,20 @@ img {
     padding-right: 35px;
     margin-right: 20px
 }
-
+.dropdown-item{
+    display: block !important;
+    top: 15px !important;
+    font-size: 16px !important;
+}
+.note-modal-backdrop{
+    z-index: 9 !important;
+}
+.note-modal{
+    top: 100px !important;
+}
+.note-modal-footer{
+    height: 80px !important;
+}
 #logo img {
     height: 42px;
     width: auto;
@@ -13128,7 +13141,7 @@ a.attachment-box:hover i {
 }
 
 .dashboard-content-inner {
-    padding: 50px;
+    padding: 30px;
     padding-bottom: 0;
     position: relative
 }
@@ -14303,7 +14316,7 @@ ul.dashboard-box-list > li:hover {
     a.dashboard-responsive-nav-trigger {
         width: 100%;
         margin: 0;
-        margin-top: 15px;
+        margin-top: 80px;
         background-color: #333;
         border-radius: 5px;
         color: #fff;
@@ -14453,6 +14466,7 @@ ul.dashboard-box-list > li:hover {
 
 .message-content-inner, .messages-container-inner .messages-inbox ul {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .message-content-inner::-webkit-scrollbar, .messages-container-inner .messages-inbox ul::-webkit-scrollbar {
@@ -14475,7 +14489,7 @@ ul.dashboard-box-list > li:hover {
     max-height: 82px;
     font-size: 16px;
     margin: 0;
-    padding: 22px 30px;
+    padding: 10px 20px;
     color: #333;
     background-color: #fff;
     display: block;
@@ -14563,7 +14577,7 @@ ul.dashboard-box-list > li:hover {
 }
 
 .messages-inbox ul li:nth-child(2n) {
-    background-color: #fafafa
+    background-color: #fff;
 }
 
 .messages-inbox ul li:last-child {
@@ -14571,7 +14585,7 @@ ul.dashboard-box-list > li:hover {
 }
 
 .messages-inbox ul li:hover, .messages-inbox ul li.active-message {
-    background-color: var(--theme-color-0_04)
+    background-color: rgb(67 135 208 / 4%)
 }
 
 .messages-inbox ul li:before {
@@ -14658,10 +14672,10 @@ ul.dashboard-box-list > li:hover {
 }
 
 .messages-container-inner .message-content-inner {
-    padding: 30px;
+    padding: 15px 10px;
     padding-bottom: 0;
     flex-grow: 1;
-    min-height: 500px;
+    min-height: 350px;
     position: relative;
 }
 
@@ -14803,6 +14817,7 @@ ul.dashboard-box-list > li:hover {
 .message-bubble .message-text p {
     font-size: 15px;
     line-height: 25px;
+    margin-bottom: 0;
 }
 
 .message-bubble.me .message-avatar {
@@ -14897,7 +14912,7 @@ ul.dashboard-box-list > li:hover {
 
 .message-reply {
     border-top: 1px solid #eaeaea;
-    padding: 30px;
+    padding: 10px 20px;
     display: flex;
     align-items: flex-start;
 }
@@ -19061,5 +19076,12 @@ span.status-not-available {
 
     .ai-lightbox-image-wrapper .ai-lightbox-image {
         margin-bottom: 10px
+    }
+    
+}
+
+@media(max-width: 767px) {
+    .ud-hero-buttons{
+        flex-direction: column;
     }
 }
