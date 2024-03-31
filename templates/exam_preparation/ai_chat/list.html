@@ -1,20 +1,81 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div id="chat-content">
-        {% for ai_chat in ai_chats %}
-            <b>{{ ai_chat.request }}</b>
-            --
-            <p>{{ ai_chat.response }}</p>
-        {% endfor %}
+<div class="messages-container margin-top-0">
+    <div class="messages-container-inner">
+        <!-- Message Content -->
+        <div class="message-content">
+            <div class="messages-headline">
+                <h4 class="d-flex align-items-center">
+                    <div class="user-avatar margin-right-10">
+                        <img src="https://gpttextart.ru/storage/profile/1161793358.jpg" alt="Chat Bot GPT" width="25">
+                    </div>
+                    <div class="line-height-1">
+                        <span>Chat Bot GPT</span>
+                     </div>
+                </h4>
+                <div class="message-action">
+                    <a href="#" class="button ripple-effect btn-sm d-md-none d-inline-block" id="show-conversations" data-tippy-placement="top" data-tippy="" data-original-title="Показать беседы"><i class="icon-feather-menu"></i></a>
+                    <a href="#" class="button ripple-effect btn-sm red" id="delete-chats" title="Удалить беседу" data-tippy-placement="top">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
+                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Message Content Inner -->
+            <div class="message-content-inner">
+                {% for ai_chat in ai_chats %}
+                <div id="dynamic-messages">
+                    <div class="message-bubble me">
+                        <div class="message-bubble-inner">
+                            <div class="message-avatar"><img src="https://gpttextart.ru/storage/profile/100407535402016300861.jpg" alt="itdiplomka"></div>
+                            <div class="message-text" id="msg-undefined" data-message="казакстан президенти">
+                                
+                                <div class="markdown-body"><p>{{ ai_chat.request }}</p></div>
+                                <button class="markdown-copy"><i class="icon-feather-copy"></i> Копировать</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                  
+                    <div class="message-bubble ">
+                        <div class="message-bubble-inner">
+                            <div class="message-avatar"><img src="https://gpttextart.ru/storage/profile/1161793358.jpg" alt="Chat Bot GPT"></div>
+                            <div class="message-text" id="msg-" data-message="{{ ai_chat.response }}">
+                                
+                                <div class="markdown-body"><p>{{ ai_chat.response }}</p></div>
+                                <button class="markdown-copy"><i class="icon-feather-copy"></i> Копировать</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                 {% endfor %}
+                <div id="conversation-loader" class="button-progress" style="display: none;"></div>
+            </div>
+            <!-- Message Content Inner / End -->
+
+            <!-- Reply Area -->
+            <form id="id-ai-chat-form" action="" method="post">{% csrf_token %}
+                <div class="message-reply">
+                    <input type="text" id="id-ai-chat-text" required placeholder="Хабарыңызды осы жерге теріңіз (жіберу үшін Shift + Enter пернелерін пайдаланыңыз)"> 
+                <div>
+                    <button id="id-ai-chat-create" type="submit" class="button ripple-effect">Жіберу</button>
+                </div>
+            
+
+        </div></form>
+        <!-- Message Content -->
+
     </div>
+</div>
+</div>
 
 
-    <form id="id-ai-chat-form" action="" method="post">
-        {% csrf_token %}
-        <input type="text" id="id-ai-chat-text" required> <br>
-        <button id="id-ai-chat-create" type="submit">Жіберу</button>
-    </form>
+    
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
@@ -47,6 +108,7 @@
                 }
             });
         });
+
     </script>
 
 {% endblock %}
