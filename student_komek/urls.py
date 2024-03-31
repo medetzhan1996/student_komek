@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
     path('', include('authentication.urls'), name='authentication'),
     path('exam_preparation/', include('exam_preparation.urls'), name='exam_preparation'),
     path('index/', TemplateView.as_view(template_name='index.html'), name='index'),
-
+    path('logout/', LogoutView.as_view(), name='logout'),
 
 ]
