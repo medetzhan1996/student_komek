@@ -23,7 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls, name='admin'),
     path('', include('authentication.urls'), name='authentication'),
     path('exam_preparation/', include('exam_preparation.urls'), name='exam_preparation'),
-    path('index/', TemplateView.as_view(template_name='index.html'), name='index'),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('logout/', LogoutView.as_view(), name='logout'),
 
 ]

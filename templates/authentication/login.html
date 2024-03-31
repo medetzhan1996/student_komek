@@ -10,7 +10,7 @@
                     <h3>Қош келдіңіз!</h3>
                     <span>
                         Есептік жазбаңыз жоқ па?
-                        <a href="">Тіркелу</a>
+                        <a href="{% url 'authentication:register' %}">Тіркелу</a>
                     </span>
                 </div>
                 <div class="">
@@ -26,7 +26,7 @@
                             <span>Құпия сөз енгізіңіз</span>
                             {{ form.password }}
                         </div>
-                        <a href="" class="forgot-password">Құпия сөзіңізді ұмыттыңыз ба?</a>
+{#                        <a href="" class="forgot-password">Құпия сөзіңізді ұмыттыңыз ба?</a>#}
                         <input type="hidden" name="ref" value="{REF}">
                         <button class="button full-width button-sliding-icon ripple-effect margin-top-10" name="submit" type="submit">Кіру</button>
                     </form>

@@ -54,6 +54,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    # "authentication.middleware.ConfirmUserMiddleware",
 ]
 
 ROOT_URLCONF = "student_komek.urls"
@@ -81,11 +83,17 @@ WSGI_APPLICATION = "student_komek.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'istudent_db',
+        'USER': 'medet',
+        'PASSWORD': 'Astana2022',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
+
+
 
 
 # Password validation
@@ -131,3 +139,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = "authentication.User"
+
+
+LOGIN_REDIRECT_URL = '/exam_preparation/list/'
+
+LOGOUT_REDIRECT_URL = '/'
