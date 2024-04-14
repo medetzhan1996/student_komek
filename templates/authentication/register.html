@@ -7,7 +7,7 @@
             <div class="login-register-page">
                 <!-- Welcome Text -->
                 <div class="welcome-text">
-                    <h3>Қош келдіңіз, сайтқа тіркеліңіз!</h3>
+                    <h3>Өтініш қалдырыңыз, біздің менеджерлер сізбен жақын арада хабарласады!</h3>
                     <span>Сізде аккаунт бар ма? <a href="{% url 'authentication:login' %}">Кіру</a></span>
                 </div>
                 <div class="">
@@ -17,20 +17,16 @@
                     <form method="post">
                          {% csrf_token %}
                         <div class="">
+                            <span>Атыңызды енгізіңіз</span>
+                            {{ form.full_name }}
+                        </div>
+                        <div class="">
                             <span>Телефон номер жазыңыз</span>
-                            {{ form.username }}
+                            {{ form.phone_number }}
                         </div>
                         <div class="">
                             <span>Мамандығыңызды енгізіңіз</span>
                             {{ form.profession }}
-                        </div>
-                        <div class="">
-                            <span>Құпия сөз ойлап табыңыз</span>
-                            {{ form.password1 }} 
-                        </div>
-                        <div class="">
-                            <span>Құпия сөз қайталаңыз</span>
-                            {{ form.password2 }} 
                         </div>
                         <!-- <a href="" class="forgot-password">Құпия сөзіңізді ұмыттыңыз ба?</a> -->
                         <button class="button full-width button-sliding-icon ripple-effect margin-top-10" name="submit" type="submit">Тіркелу</button>

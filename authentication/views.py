@@ -4,13 +4,13 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 
-from authentication.forms import CustomUserCreationForm
+from authentication.forms import ProposalForm
 
 
 class UserRegistrationView(CreateView):
     template_name = 'authentication/register.html'
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy('authentication:login')
+    form_class = ProposalForm
+    success_url = reverse_lazy('index')
 
 
 class UserLoginView(LoginView):

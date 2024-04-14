@@ -2,7 +2,7 @@ from openai import OpenAI
 
 
 def generate_ai_question(text):
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key='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')
 
     response = client.chat.completions.create(
       model="gpt-4-turbo-preview",
@@ -17,7 +17,7 @@ def generate_ai_question(text):
         }
       ],
       temperature=1,
-      max_tokens=500,
+      max_tokens=1500,
       top_p=1,
       frequency_penalty=0,
       presence_penalty=0
@@ -33,7 +33,7 @@ def generate_ai_question(text):
 
 
 def generate_ai_chat(text):
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key='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')
 
     response = client.chat.completions.create(
       model="gpt-4-turbo-preview",
